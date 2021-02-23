@@ -34,22 +34,22 @@
     },
     "homepage": "https://github.com/theogravity/datadog-apm#readme",
     "devDependencies": {
-        "@types/jest": "^24.0.23",
-        "@types/koa": "^2.0.51",
-        "@typescript-eslint/eslint-plugin": "2.3.2",
-        "@typescript-eslint/parser": "^2.6.0",
-        "eslint": "^6.5.1",
-        "eslint-config-prettier": "^6.4.0",
-        "eslint-plugin-import": "^2.18.2",
-        "eslint-plugin-jest": "^22.15.1",
-        "eslint-plugin-prettier": "^3.1.1",
-        "eslint-plugin-simple-import-sort": "^4.0.0",
-        "jest": "^24.9.0",
-        "prettier": "1.18.2",
-        "ts-jest": "^24.2.0",
-        "typescript": "^3.8.0-dev.20191203"
+        "@types/jest": "^26.0.20",
+        "@types/koa": "^2.13.0",
+        "@typescript-eslint/eslint-plugin": "4.15.2",
+        "@typescript-eslint/parser": "^4.15.2",
+        "eslint": "^7.20.0",
+        "eslint-config-prettier": "^8.0.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jest": "^24.1.5",
+        "eslint-plugin-prettier": "^3.3.1",
+        "eslint-plugin-simple-import-sort": "^7.0.0",
+        "jest": "^26.6.3",
+        "prettier": "2.2.1",
+        "ts-jest": "^26.5.1",
+        "typescript": "^4.1.5"
     },
     "dependencies": {
-        "dd-trace": "^0.30.6"
+        "dd-trace": "^0.31.0"
     }
 }
