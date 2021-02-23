@@ -35,7 +35,7 @@ const getRootSpanFromRequestContext = (context: PrivateDatadogContext): Nullable
  * @param tags An object with the tags to add to the span
  * @param span An optional span object to add the tags to. If none provided, the current span will be used.
  */
-const addTags = (tags: Record<string, string>, span?: Nullable<Span>): void => {
+const addTags = (tags: Record<string, string | undefined>, span?: Nullable<Span>): void => {
     const currentSpan = span || getCurrentSpan();
 
     if (!currentSpan) {
