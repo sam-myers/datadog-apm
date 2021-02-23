@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { Tracer } from 'dd-trace';
-import { tracerOptions } from './tracer'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const emptyFn = function() {};
@@ -23,9 +22,7 @@ type MockTracer = Tracer & { isMock?: boolean };
 
 export const mockTracer = new Proxy({} as MockTracer, {
     get<K extends keyof MockTracer>(_target: Tracer, key: K) {
-        if (tracerOptions.debug) {
-            console.warn(`Tried to access the DataDog tracer before the init function was called. Attempted to access property "${key}".`);
-        }
+        console.warn(`Tried to access the DataDog tracer before the init function was called. Attempted to access property "${key}".`);
 
         if (key === 'isMock') {
             return true;

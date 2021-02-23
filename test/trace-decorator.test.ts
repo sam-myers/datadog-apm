@@ -1,4 +1,9 @@
 import { traceFunction } from '../src/trace-decorator';
+import { init } from '../src/tracer'
+
+init({}, {
+    useMock: true,
+})
 
 describe('traceFunction', () => {
     test('traceFunction is a noop if the tracer is not inited', () => {

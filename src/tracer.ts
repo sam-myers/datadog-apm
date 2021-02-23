@@ -2,7 +2,12 @@ import { Tracer, TracerOptions, tracer as tracerRaw } from 'dd-trace';
 import { mockTracer } from './mock-tracer';
 
 let tracerOptions: TracerOptions = {};
-let tracer: Tracer & { isMock?: boolean } = mockTracer;
+let tracer: Tracer & { isMock?: boolean };
+
+interface ApmOptions {
+    /* Use the mock tracer */
+    useMock?: boolean
+}
 
 /**
  * This is a wrapper around the datadog init function.
@@ -11,16 +16,20 @@ let tracer: Tracer & { isMock?: boolean } = mockTracer;
  *
  * @param options The `TracerOptions` to be passed the tracer init function
  */
-const init = (options: TracerOptions): void => {
-    tracerOptions = options;
-    tracer = tracerRaw;
-    tracer.init(tracerOptions);
-    tracer.isMock = false;
-
-    if (tracerOptions.enabled) {
-        console.log('DataDog APM Trace Running, with options: ', tracerOptions);
+const init = (options: TracerOptions, apmOptions: ApmOptions = {}): void => {
+    if (!apmOptions.useMock) {
+        tracer = mockTracer;
     } else {
-        console.log('DataDog APM Trace Disabled');
+        tracerOptions = options;
+        tracer = tracerRaw;
+        tracer.init(tracerOptions);
+        tracer.isMock = false;
+
+        if (tracerOptions.enabled) {
+            console.log('DataDog APM Trace Running, with options: ', tracerOptions);
+        } else {
+            console.log('DataDog APM Trace Disabled');
+        }
     }
 };
 
@@ -29,4 +38,5 @@ export {
     init,
     tracerOptions,
     TracerOptions,
+    ApmOptions
 }

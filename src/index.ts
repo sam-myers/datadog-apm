@@ -10,11 +10,12 @@ export {
     getRootSpanFromRequestContext,
     addTags,
     addLogMetadata,
-    markAsError,
+    markAsError
 } from './util';
 
 export {
     tracer,
     init,
     TracerOptions,
+    ApmOptions
 } from './tracer';

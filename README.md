@@ -40,13 +40,17 @@ Init must be called first before anything else:
 import { init, tracer } from '@theo.gravity/datadog-apm'
 
 // Initialize the tracer
-// dd-tracer tracer.init options
 init({
+  // dd-tracer tracer.init options
   enabled: true,
   dogstatsd: {
     hostname: 'localhost',
     port: 8125
   }
+}, {
+  // lib-specific options
+  // enable to use a mocked tracer
+  useMock: false
 });
 
 export default tracer;
