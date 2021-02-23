@@ -11,6 +11,8 @@ A lightweight wrapper over Datadog's `dd-trace` library, adding utility function
 -   Adding tags to the active span
 -   Adding tags to the _root_ span (Required to enable filtering and searching in Trace Search and Analytics)
 -   Marking a span as an error without throwing
+-   Mark a tag as `<class>.anonymous` if the function name can't be determined
+-   Remove invasive logging
 
 ## Fork notice
 

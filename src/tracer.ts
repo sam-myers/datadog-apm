@@ -17,19 +17,14 @@ interface ApmOptions {
  * @param options The `TracerOptions` to be passed the tracer init function
  */
 const init = (options: TracerOptions, apmOptions: ApmOptions = {}): void => {
+    tracerOptions = options;
+
     if (apmOptions.useMock) {
         tracer = mockTracer;
     } else {
-        tracerOptions = options;
         tracer = tracerRaw;
         tracer.init(tracerOptions);
         tracer.isMock = false;
-
-        if (tracerOptions.enabled) {
-            console.log('DataDog APM Trace Running, with options: ', tracerOptions);
-        } else {
-            console.log('DataDog APM Trace Disabled');
-        }
     }
 };
 

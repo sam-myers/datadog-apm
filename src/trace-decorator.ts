@@ -47,11 +47,17 @@ const traceFunction = (config: TraceConfig) => <F extends (...args: any[]) => an
             ? makeServiceName(config.serviceName)
             : makeServiceName(spanName);
         const childOf = config.isRoot ? undefined : (tracer.scope().active() || undefined);
-        const resourceName = config.resourceName
-            ? config.resourceName
-            : className
-                ? `${className}.${methodName}`
-                : methodName;
+
+        let resourceName;
+
+        if (config.resourceName) {
+            resourceName = config.resourceName;
+        } else if (className && methodName) {
+            resourceName = `${className}.${methodName}`;
+        } else if (className) {
+            resourceName = `${className}.anonymous`;
+        }
+
         const spanOptions: SpanOptions = {
             childOf,
             tags: {
