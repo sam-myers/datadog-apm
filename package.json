@@ -1,6 +1,6 @@
 {
     "name": "@theo.gravity/datadog-apm",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Utility functions to help integrate Datadog's APM with a Node.js client",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",

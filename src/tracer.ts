@@ -17,7 +17,7 @@ interface ApmOptions {
  * @param options The `TracerOptions` to be passed the tracer init function
  */
 const init = (options: TracerOptions, apmOptions: ApmOptions = {}): void => {
-    if (!apmOptions.useMock) {
+    if (apmOptions.useMock) {
         tracer = mockTracer;
     } else {
         tracerOptions = options;
