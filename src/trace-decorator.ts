@@ -143,6 +143,7 @@ const traceClass = (config?: TraceConfig) =>
  */
 // Going to rely on inferrence do its thing for this function
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 function trace(config?: TraceConfig) {
     function traceDecorator(target: Constructor): void;
     function traceDecorator<T>(
