@@ -1,5 +1,5 @@
 {
-    "name": "@gamechanger/datadog-apm",
+    "name": "@theogravity/datadog-apm",
     "version": "0.2.1",
     "description": "Utility functions to help integrate Datadog's APM with a Node.js client",
     "main": "lib/index.js",
@@ -17,7 +17,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/gamechanger/datadog-apm.git"
+        "url": "git+https://github.com/theogravity/datadog-apm.git"
     },
     "keywords": [
         "datdog",
@@ -30,9 +30,9 @@
     ],
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/gamechanger/datadog-apm/issues"
+        "url": "https://github.com/theogravity/datadog-apm/issues"
     },
-    "homepage": "https://github.com/gamechanger/datadog-apm#readme",
+    "homepage": "https://github.com/theogravity/datadog-apm#readme",
     "devDependencies": {
         "@types/jest": "^24.0.23",
         "@types/koa": "^2.0.51",

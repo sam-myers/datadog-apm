@@ -1,0 +1,8 @@
+src/
+.vscode/
+test/
+.gitlab-ci.yml
+.eslintrc
+.prettierrc.js
+jest.config.js
+tsconfig.json

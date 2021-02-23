@@ -1,6 +1,9 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es2018",
+        "lib": [
+            "es2018"
+        ],
         "module": "commonjs",
         "declaration": true,
         "declarationMap": true,

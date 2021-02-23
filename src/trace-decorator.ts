@@ -21,6 +21,8 @@ interface TraceConfig {
   methodName?: string;
   serviceName?: string;
   spanName?: string;
+  spanType?: string;
+  /** Overrides className if specified */
   resourceName?: string;
   isRoot?: boolean;
   /** Cause the span to show up in trace search and analytics */
@@ -28,7 +30,7 @@ interface TraceConfig {
   tags?: Tags;
 }
 
-const makeServiceName = (serviceName: string): string => `${tracerOptions.service}-${serviceName}`;
+const makeServiceName = (serviceName: string): string => `${tracerOptions.service}.${serviceName}`;
 
 const traceFunction = (config: TraceConfig) => <F extends (...args: any[]) => any, P extends Parameters<F>, R extends ReturnType<F>>(target: F): F =>
     tracer.isMock ? target :
@@ -37,6 +39,7 @@ const traceFunction = (config: TraceConfig) => <F extends (...args: any[]) => an
             className,
             methodName = target.name,
             spanName = 'DEFAULT_SPAN_NAME',
+            spanType = '',
             makeSearchable: useAnalytics,
             tags,
         } = config;
@@ -54,6 +57,7 @@ const traceFunction = (config: TraceConfig) => <F extends (...args: any[]) => an
             tags: {
                 [DDTags.SERVICE_NAME]: serviceName,
                 [DDTags.RESOURCE_NAME]: resourceName,
+                [DDTags.SPAN_TYPE]: spanType,
                 ...tags,
             },
         };

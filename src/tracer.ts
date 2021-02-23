@@ -1,4 +1,4 @@
-import { Tracer, TracerOptions } from 'dd-trace';
+import { Tracer, TracerOptions, tracer as tracerRaw } from 'dd-trace';
 import { mockTracer } from './mock-tracer';
 
 let tracerOptions: TracerOptions = {};
@@ -13,7 +13,7 @@ let tracer: Tracer & { isMock?: boolean } = mockTracer;
  */
 const init = (options: TracerOptions): void => {
     tracerOptions = options;
-    tracer = require('dd-trace');
+    tracer = tracerRaw;
     tracer.init(tracerOptions);
     tracer.isMock = false;
 

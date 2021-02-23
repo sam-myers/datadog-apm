@@ -1,2 +1,20 @@
-export * from './trace-decorator';
-export * from './util';
+export {
+    trace,
+    traceFunction,
+    Tags
+} from './trace-decorator';
+
+export {
+    Span,
+    Formats,
+    getRootSpanFromRequestContext,
+    addTags,
+    addLogMetadata,
+    markAsError,
+} from './util';
+
+export {
+    tracer,
+    init,
+    TracerOptions,
+} from './tracer';

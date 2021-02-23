@@ -12,16 +12,44 @@ A lightweight wrapper over Datadog's `dd-trace` library, adding utility function
 -   Adding tags to the _root_ span (Required to enable filtering and searching in Trace Search and Analytics)
 -   Marking a span as an error without throwing
 
+## Fork notice
+
+This is a fork of `@gamechanger/datadog-apm`. Changes include:
+
+- Export of the init / trace methods and more
+- Hide the init warning unless `debug: true` in init
+- Service name format is `<service>.<service name>`
+
 ## Install
 
 ```sh
-npm install --save @gamechanger/datadog-apm
+npm install --save @theogravity/datadog-apm
 ```
 
 or
 
 ```sh
-yarn add @gamechanger/datadog-apm
+yarn add @theogravity/datadog-apm
+```
+
+## Init
+
+Init must be called first before anything else:
+
+```
+import { init, tracer } from '@theogravity/datadog-apm'
+
+// Initialize the tracer
+// dd-tracer tracer.init options
+init({
+  enabled: true,
+  dogstatsd: {
+    hostname: 'localhost',
+    port: 8125
+  }
+});
+
+export default tracer;
 ```
 
 ## Decorators
