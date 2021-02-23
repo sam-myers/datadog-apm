@@ -13,6 +13,7 @@
     "prettier",
     "prettier/@typescript-eslint"
   ],
+  "ignorePatterns": ["lib/"],
   "settings": {
     "import/parsers": {
       "@typescript-eslint/parser": [

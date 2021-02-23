@@ -1,15 +1,15 @@
 {
     "compilerOptions": {
-        "target": "es2018",
+        "target": "es2017",
         "lib": [
-            "es2018"
+            "es2017"
         ],
         "module": "commonjs",
         "declaration": true,
         "declarationMap": true,
         "composite": true,
-        "rootDir": "./src",
-        "outDir": "./lib",
+        "rootDir": "src",
+        "outDir": "lib",
         "strict": true,
         "experimentalDecorators": true
     },

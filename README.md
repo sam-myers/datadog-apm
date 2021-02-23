@@ -23,13 +23,13 @@ This is a fork of `@gamechanger/datadog-apm`. Changes include:
 ## Install
 
 ```sh
-npm install --save @theogravity/datadog-apm
+npm install --save @theo.gravity/datadog-apm
 ```
 
 or
 
 ```sh
-yarn add @theogravity/datadog-apm
+yarn add @theo.gravity/datadog-apm
 ```
 
 ## Init
@@ -37,7 +37,7 @@ yarn add @theogravity/datadog-apm
 Init must be called first before anything else:
 
 ```
-import { init, tracer } from '@theogravity/datadog-apm'
+import { init, tracer } from '@theo.gravity/datadog-apm'
 
 // Initialize the tracer
 // dd-tracer tracer.init options
