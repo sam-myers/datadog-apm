@@ -11,16 +11,15 @@ A lightweight wrapper over Datadog's `dd-trace` library, adding utility function
 -   Adding tags to the active span
 -   Adding tags to the _root_ span (Required to enable filtering and searching in Trace Search and Analytics)
 -   Marking a span as an error without throwing
--   Mark a tag as `<class>.anonymous` if the function name can't be determined
--   Remove invasive logging
 
 ## Fork notice
 
 This is a fork of `@gamechanger/datadog-apm`. Changes include:
 
 - Export of the init / trace methods and more
-- Hide the init warning unless `debug: true` in init
-- Service name format is `<service>.<service name>`
+- Does not init the mock tracer when including the library
+- Mark a tag as `<class>.anonFn` if the function name can't be determined
+- Remove invasive logging
 
 ## Install
 

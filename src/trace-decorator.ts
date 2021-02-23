@@ -30,7 +30,7 @@ interface TraceConfig {
   tags?: Tags;
 }
 
-const makeServiceName = (serviceName: string): string => `${tracerOptions.service}.${serviceName}`;
+const makeServiceName = (serviceName: string): string => `${tracerOptions.service}-${serviceName}`;
 
 const traceFunction = (config: TraceConfig) => <F extends (...args: any[]) => any, P extends Parameters<F>, R extends ReturnType<F>>(target: F): F =>
     tracer.isMock ? target :
@@ -55,7 +55,7 @@ const traceFunction = (config: TraceConfig) => <F extends (...args: any[]) => an
         } else if (className && methodName) {
             resourceName = `${className}.${methodName}`;
         } else if (className) {
-            resourceName = `${className}.anonymous`;
+            resourceName = `${className}.anonFn`;
         }
 
         const spanOptions: SpanOptions = {
