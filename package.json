@@ -1,6 +1,6 @@
 {
     "name": "@theo.gravity/datadog-apm",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "Utility functions to help integrate Datadog's APM with a Node.js client",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -34,22 +34,22 @@
     },
     "homepage": "https://github.com/theogravity/datadog-apm#readme",
     "devDependencies": {
-        "@types/jest": "^27.0.2",
+        "@types/jest": "^27.0.3",
         "@types/koa": "^2.13.4",
-        "@typescript-eslint/eslint-plugin": "4.15.2",
-        "@typescript-eslint/parser": "^4.15.2",
-        "eslint": "^6.5.1",
-        "eslint-config-prettier": "^6.4.0",
-        "eslint-plugin-import": "^2.18.2",
-        "eslint-plugin-jest": "^22.15.1",
-        "eslint-plugin-prettier": "^3.1.1",
-        "eslint-plugin-simple-import-sort": "^4.0.0",
-        "jest": "^27.3.0",
-        "prettier": "2.4.1",
-        "ts-jest": "^27.0.7",
-        "typescript": "^4.4.4"
+        "@typescript-eslint/eslint-plugin": "5.7.0",
+        "@typescript-eslint/parser": "^5.7.0",
+        "eslint": "^8.5.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.25.3",
+        "eslint-plugin-jest": "^25.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-simple-import-sort": "^7.0.0",
+        "jest": "^27.4.5",
+        "prettier": "2.5.1",
+        "ts-jest": "^27.1.2",
+        "typescript": "^4.5.4"
     },
     "dependencies": {
-        "dd-trace": "^1.5.0"
+        "dd-trace": "^1.6.0"
     }
 }
