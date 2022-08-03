@@ -43,7 +43,6 @@ import { init, tracer } from '@theo.gravity/datadog-apm'
 // Initialize the tracer
 init({
   // dd-tracer tracer.init options
-  enabled: true,
   dogstatsd: {
     hostname: 'localhost',
     port: 8125
@@ -62,10 +61,6 @@ export default tracer;
 Your observability code should stay out of the way of your business logic, and should be easy to add and remove. Decorators are a great way to accomplish that.
 
 ```TS
-// Trace a function
-@APM.trace()
-async function foo() {}
-
 // Trace *all* methods of a class
 @APM.trace()
 class GameChanger {
