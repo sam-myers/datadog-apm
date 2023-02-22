@@ -1,4 +1,11 @@
 import { mockTracer } from '../src/mock-tracer';
+import { init } from '../src';
+
+beforeAll(() => {
+    init({}, {
+        useMock: true,
+    })
+})
 
 describe('Mock tracer', () => {
     test('Mock property `isMock` is `true`', () => {

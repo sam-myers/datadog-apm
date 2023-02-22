@@ -1,8 +1,10 @@
 import { traceFunction } from '../src/trace-decorator';
 import { init } from '../src/tracer'
 
-init({}, {
-    useMock: true,
+beforeAll(() => {
+    init({}, {
+        useMock: true,
+    })
 })
 
 describe('traceFunction', () => {

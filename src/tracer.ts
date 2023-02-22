@@ -15,9 +15,24 @@ interface ApmOptions {
  * otherwise the APM may not be able to trace it properly or at all.
  *
  * @param options The `TracerOptions` to be passed the tracer init function
+ * @param apmOptions The datadog-apm options
  */
-const init = (options: TracerOptions, apmOptions: ApmOptions = {}): void => {
+const init = (options: TracerOptions & { enabled?: boolean | undefined; debug?: boolean | undefined }, apmOptions: ApmOptions = {}): void => {
     tracerOptions = options;
+
+    if (process.env.DD_TRACE_ENABLED === undefined && options.enabled) {
+        process.env.DD_TRACE_ENABLED = 'true';
+    } else if (process.env.DD_TRACE_ENABLED === undefined && options.enabled === undefined) {
+        process.env.DD_TRACE_ENABLED = 'true';
+    } else if (process.env.DD_TRACE_ENABLED === undefined && options.enabled === false) {
+        process.env.DD_TRACE_ENABLED = 'false';
+    }
+
+    if (process.env.DD_TRACE_DEBUG === undefined && options.debug) {
+        process.env.DD_TRACE_DEBUG = 'true';
+    } else if (process.env.DD_TRACE_ENABLED === undefined && options.debug === undefined) {
+        process.env.DD_TRACE_DEBUG = 'false';
+    }
 
     if (apmOptions.useMock) {
         tracer = mockTracer;
